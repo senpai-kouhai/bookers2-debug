@@ -1,0 +1,15 @@
+<% if @range == "User" %>
+  <% if @users.present? %>
+    <h1>Users search for "<%= params[:word] %>"</h1>
+    <%= render 'users/index', users: @users %>
+  <% else %>
+    <p>検索結果はありません。</p>
+  <% end %>
+<% else %>
+  <% if @books.present? %>
+    <h1>Books search for "<%= params[:word] %>"</h1>
+    <%= render 'books/index', books: @books %>
+  <% else %>
+  <p>検索結果はありません。</p>
+  <% end %>
+<% end %>
